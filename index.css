@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.body-container{
+    background-color: black;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-container {
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid white; */
+    width: 700px;
+    height: 90%;
+    text-align: center;
+}
+
+.header {
+    /* border: 1px solid white; */
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.1rem;
+}
+
+.header h1{
+    font-weight:900;
+    text-align: center;
+    word-spacing: 6px;
+}
+
+.header h2{
+    font-size: 80px;
+    padding: 0;
+    margin: -15px 0px;
+}
+
+.gartcod-img{
+    height: 100px; 
+    margin: -25px 5px;
+}
+
+.header span{
+    color: white;
+}
+
+.gartcod-google {
+    height: 90px;
+    width: 100px;
+    margin: -25px 15px;
+    transition: transform 2s ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+  
+.timing {
+    transition: transform 2s ease-in-out;
+    transition-timing-function: ease-in-out;
+}
+
+.main{
+    margin: -20px 0px 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main h1{
+    font-size: 1rem;
+    font-weight: 100;
+    opacity: 0.7;
+    word-spacing: 1px;
+}
+
+.tool {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    animation: moveAnimation 4.5s linear forwards;
+    z-index: 400;
+}
+
+@keyframes moveAnimation {
+    0% {
+        transform: translate(0%, 0%); /* Start position */
+      }
+      25% {
+        transform: translate(50vw, 55vh); /* Middle position after 2 seconds */
+      }
+      50% {
+        transform: translate(50vw, 85vh); /* Middle position after 2.5 seconds */
+      }
+      100% {
+        transform: translate(100vw, 0vh); /* End position after 4.5 seconds */
+        display: none;
+      }
+  }
+
+.main img{
+    height: 50px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.footer .time {
+    margin: 30px 0;
+    display: flex;
+    width: 30%;
+}
+
+.footer .time div{
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    display: flex;
+    font-weight:bold;
+    flex-direction: column;
+}
+
+.footer .time div p{
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.footer .time div span{
+    font-size: 0.4rem;
+}
+
+.footer .ticket button{
+    position: absolute;
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    left: 47.5vw;
+    top: 55vh;
+    margin-top: 20px;
+    animation: moveButton 0.5s linear 1.5s forwards;
+}
+
+@keyframes moveButton {
+    to {
+        left: 47.5vw;
+        top: 80vh;
+    }
+  }
+
+
+#hours, #minutes, #days, #seconds {
+    display: inline-block;
+    font-size: 33px;
+    transform-origin: top;
+    transition-duration: 0.5s;
+    animation: changeNumber 0.5s infinite alternate;
+}
+
+@keyframes changeNumber {
+    0% {
+      transform: translateY(20%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.9;
+    }
+  }
+
+.time > div > div {
+    line-height: 20px;
+    transition: all 800ms ease-in-out;
+}
+
+.time > div.animate{
+    animation: bounce 800ms ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100%{
+        margin-top: 0px;
+    }
+}

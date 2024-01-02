@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Boxes with Border</title>
+  <link rel="stylesheet" href="aise.css">
+</head>
+<link rel="stylesheet" href="index.css">
+<style>
+  body{
+    background-image: radial-gradient(farthest-side at 50% -5%, gray, black);
+  }
+  /* Overlay container */
+.body-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent; /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+</style>
+<body>
+    <div class="grid-container">
+        <!-- Boxes will be created dynamically here using JavaScript -->
+    </div>
+    <div class="tool">
+      <img src="./designer.cf165e6f.svg" alt="designer gif" >
+    </div>
+    <div class="body-container">
+      <div class="main-container">
+          <div class="header">
+              <h1  id="header-h1-span"><img src="./gartcod-without-bg.webp" alt="" class="gartcod-img" id="gartcod-img"> <span> for </span> <img src="./chrome.svg" alt="chrome image" class="gartcod-google" height="50px" id="gartcod">& Cloud gaming</h1>
+          </div>
+          <div class="main"><h1>Join us on the lunch of gartcod by </h1><img src="./provoke_logo.webp" alt="provoke_logo"></div>
+          <div class="footer">
+              <div class="time">
+                  <div class="timing"><p id="days">31 </p><span id="span">DAYS</span></div>
+                  <div class="timing"><p id="hours">31 </p> <span id="span">HOURS</span></div>
+                  <div class="timing"><p id="minutes">31 </p> <span id="span">MINUTES</span></div>
+                  <div class="timing"><p id="seconds">31 </p> <span id="span">SECONDS</span></div>
+              </div>
+              <div class="ticket">
+                  <button id="ticket-button">Claim Ticket</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script>
+    const gridContainer = document.querySelector('.grid-container');
+    console.log(gridContainer)
+    gridContainer.style.display = 'grid';
+    
+    // Function to create boxes dynamically
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const boxSize = 30; // Adjust box size as needed
+    const numBoxesX = Math.ceil(screenWidth / boxSize);
+    const numBoxesY = Math.ceil(screenHeight / boxSize);
+    const totalBoxes = numBoxesX * numBoxesY;
+
+    gridContainer.style.gridTemplateRows = `repeat(${numBoxesY}, 30px)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${numBoxesX}, 30px)`;
+    gridContainer.style.gap = '1px';
+    
+    function createBoxes(num) {
+        for (let i = 0; i < num; i++) {
+            const box = document.createElement('div');
+            box.classList.add('box');
+            box.style.background = 'black';
+            box.style.height = boxSize;
+            box.style.width = boxSize;
+            box.style.border = '1px solid black';
+            gridContainer.appendChild(box);
+        }
+    }
+    // Create 100 grid boxes (10x10 grid)
+    createBoxes(totalBoxes);
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>
